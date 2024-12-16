@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Discover Nepal's Nature</title>
+
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #333;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    /* Section Styling */
+    section {
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('img3.jpeg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+
+    .hero .btn {
+      background-color: #f39c12;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .hero .btn:hover {
+      background-color: #e67e22;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .about p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      text-align: justify;
+      color: #555;
+    }
+
+    .about .image {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .about .image img {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 60px 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .service-cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background-color: white;
+      padding: 20px;
+      width: 30%;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: #f39c12;
+    }
+
+    .service-card p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 60px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      color: #333;
+    }
+
+    .contact button {
+      background-color: #f39c12;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background-color: #e67e22;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('about')">About</a></li>
+      <li><a href="#" onclick="showSection('services')">Services</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Explore the Hidden Gems of Nepal</h1>
+    <p>Guffapokhari, Tinjure, and Nundhaki - Nature at its best.</p>
+    <a href="#about" class="btn">Learn More</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>Nature of Guffapokhari, Tinjure, and Nundhaki</h2>
+    <p>
+      **Guffapokhari** is a serene and hidden lake situated in the Eastern Himalayas of Nepal. This pristine lake is surrounded by lush forests and the towering mountains of the region. Guffapokhari offers spectacular views of the Kanchenjunga range, one of the highest peaks in the world. The area is known for its unspoiled natural beauty, making it a perfect destination for nature lovers, trekkers, and those looking for peace and tranquility away from the hustle and bustle of modern life.
+    </p>
+    
+    <p>
+      **Tinjure** is a picturesque village located in the foothills of the eastern Himalayas, known for its vibrant rhododendron forests that bloom in spring, creating a magical scene of colors. The region is a rich biodiversity hotspot, home to a variety of flora and fauna, and is an excellent destination for birdwatching. The area also offers trekking trails, with panoramic views of the surrounding hills, valleys, and mountains.
+    </p>
+    
+    <p>
+      **Nundhaki** is another beautiful and tranquil area in the eastern region of Nepal, nestled in the wilderness, offering a peaceful escape from city life. This area is blessed with rich biodiversity, including diverse wildlife, lush green forests, and clear rivers. Nundhaki is a perfect place for those who want to explore the pristine natural beauty of Nepal and immerse themselves in its vibrant flora and fauna. It’s a fantastic location for nature walks, wildlife photography, and trekking.
+    </p>
+
+    <div class="image">
+      <img src="https://via.placeholder.com/800x400" alt="Nature of Guffapokhari, Tinjure, and Nundhaki">
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>Guided Tours</h3>
+        <p>Experience the best of Nepal’s nature with our expert local guides who will take you on unforgettable journeys through Guffapokhari, Tinjure, and Nundhaki.</p>
+      </div>
+      <div class="service-card">
+        <h3>Conservation Projects</h3>
+        <p>We are committed to preserving the pristine environments of these regions through sustainable tourism and conservation efforts.</p>
+      </div>
+      <div class="service-card">
+        <h3>Adventure Trekking</h3>
+        <p>For adventure enthusiasts, we offer thrilling trekking routes that allow you to explore the beautiful landscapes of these remote and untouched regions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="#" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Discover Nepal's Nature. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Function to show the clicked section and hide others
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.style.display = 'none');
+      
+      // Show the clicked section
+      const sectionToShow = document.getElementById(sectionId);
+      sectionToShow.style.display = 'block';
+    }
+
+    // Initially show the home section
+    document.addEventListener('DOMContentLoaded', function() {
+      showSection('home');
+    });
+  </script>
+</body>
+</html>
